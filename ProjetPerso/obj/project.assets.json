@@ -1040,11 +1040,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adesmarais\\source\\repos\\ProjetPerso\\ProjetPerso\\ProjetPerso.csproj",
+      "projectUniqueName": "C:\\Users\\adesmarais\\source\\repos\\ProjetSiteJDR\\ProjetPerso\\ProjetPerso.csproj",
       "projectName": "ProjetPerso",
-      "projectPath": "C:\\Users\\adesmarais\\source\\repos\\ProjetPerso\\ProjetPerso\\ProjetPerso.csproj",
+      "projectPath": "C:\\Users\\adesmarais\\source\\repos\\ProjetSiteJDR\\ProjetPerso\\ProjetPerso.csproj",
       "packagesPath": "C:\\Users\\adesmarais\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adesmarais\\source\\repos\\ProjetPerso\\ProjetPerso\\obj\\",
+      "outputPath": "C:\\Users\\adesmarais\\source\\repos\\ProjetSiteJDR\\ProjetPerso\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adesmarais\\AppData\\Roaming\\NuGet\\NuGet.Config",

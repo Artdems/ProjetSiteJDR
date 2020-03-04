@@ -9,8 +9,9 @@ namespace ProjetPerso.DBContext
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> option) : base(option) { }
-
-        public DbSet<Personnage> Personnages { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=MyDatabase.db");
+        }
     }
 }
