@@ -13,5 +13,9 @@ namespace ProjetPerso.DBContext
         {
             optionsBuilder.UseSqlite("Filename=MyDatabase.db");
         }
+
+        public DbSet<Personnage> Personnages { get; set; }
+
+        
     }
 }
