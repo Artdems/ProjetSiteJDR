@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjetPerso.DAL
 {
-    public class DAL
+    public class DB
     {
 
          private DataContext client = new DataContext();

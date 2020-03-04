@@ -1,0 +1,109 @@
+﻿@using ProjetPerso.Models.Personnages
+@model IndexViewModel
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Joueur
+            </th>
+            <th>
+                Nom
+            </th>
+            <th>
+                Pernoms
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Dexteriter
+            </th>
+            <th>
+                Charisme
+            </th>
+            <th>
+                Perseption
+            </th>
+            <th>
+                Constitution
+            </th>
+            <th>
+                Force
+            </th>
+            <th>
+                Agiliter
+            </th>
+            <th>
+                Vie
+            </th>
+            <th>
+                Note
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Personnages) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Joueur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pernoms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dexteriter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Charisme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Perseption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Constitution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Force)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agiliter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
