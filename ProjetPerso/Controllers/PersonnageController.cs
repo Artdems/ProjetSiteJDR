@@ -23,22 +23,30 @@ namespace ProjetPerso.Controllers
         }
 
         // GET: Personnage/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int ReturnID)
         {
-            return View();
+            ViewData["Title"] = "Modifier un Personnage";
+            CreateEditePersonnageViewModel viewModel = new CreateEditePersonnageViewModel();
+
+            viewModel.Personnages = db.GetPersonnage(ReturnID);
+
+            return View("CreateEditePersonnage", viewModel);
         }
 
         // GET: Personnage/Create
         public ActionResult Create()
         {
-            return View();
+            ViewData["Title"] = "Ajouter un Personnage";
+            CreateEditePersonnageViewModel viewModel = new CreateEditePersonnageViewModel();
+            return View("CreateEditePersonnage", viewModel);
         }
 
         // POST: Personnage/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CreateEditePersonnageViewModel model)
         {
+            Console.WriteLine(model.Personnages);
             try
             {
                 // TODO: Add insert logic here
@@ -83,13 +91,18 @@ namespace ProjetPerso.Controllers
         // POST: Personnage/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int ReturnID, IndexViewModel viewModel)
         {
             try
             {
                 // TODO: Add delete logic here
+                db.DeletePersonnage(ReturnID);
 
-                return RedirectToAction(nameof(Index));
+                IndexViewModel ViewModel = new IndexViewModel();
+                ViewModel.Personnages = db.GetAllPersonnages();
+
+
+                return View("Index",ViewModel);
             }
             catch
             {

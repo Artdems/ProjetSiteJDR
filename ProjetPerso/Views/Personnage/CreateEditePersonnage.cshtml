@@ -1,0 +1,73 @@
+﻿@using ProjetPerso.Models.Personnages
+@model CreateEditePersonnageViewModel
+
+@{
+    ViewData["Title"] = "CreateEditePersonnage";
+}
+
+<h1>CreateEditePersonnage</h1>
+
+<h4>Personnage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Create", "Personnage", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Joueur)
+                @Html.TextBoxFor(m => m.Personnages.Joueur)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Nom)
+                @Html.TextBoxFor(m => m.Personnages.Nom)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Pernoms)
+                @Html.TextBoxFor(m => m.Personnages.Pernoms)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Age)
+                @Html.TextBoxFor(m => m.Personnages.Age)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Dexteriter)
+                @Html.TextBoxFor(m => m.Personnages.Dexteriter)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Charisme)
+                @Html.TextBoxFor(m => m.Personnages.Charisme)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Perseption)
+                @Html.TextBoxFor(m => m.Personnages.Perseption)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Constitution)
+                @Html.TextBoxFor(m => m.Personnages.Constitution)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Force)
+                @Html.TextBoxFor(m => m.Personnages.Force)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Agiliter)
+                @Html.TextBoxFor(m => m.Personnages.Agiliter)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Vie)
+                @Html.TextBoxFor(m => m.Personnages.Vie)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Personnages.Note)
+                @Html.TextBoxFor(m => m.Personnages.Note)
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+         }
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -22,6 +22,11 @@ namespace ProjetPerso.DAL
             return (client.Personnages.ToList());
         }
 
+        public Personnage GetPersonnage(int id)
+        {
+            return (client.Personnages.Where(b => b.ID.Equals(id)).First());
+        }
+
         public void DeletePersonnage(int id)
         {
             Personnage perso = client.Personnages.Where(b => b.ID.Equals(id)).First();
