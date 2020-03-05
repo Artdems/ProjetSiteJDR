@@ -3,12 +3,20 @@
 
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Personnage";
 }
 
 <script>
     function launchModal(id, joueur, nom) {
-        var h5 = document.getElementById("exampleModalLabel").innerHTML = joueur + " " + nom;
+        document.getElementById("exampleModalLabel").innerHTML = joueur + " " + nom;
+        document.getElementById("DeleteButton").action = "/Personnage/Delete?ReturnID=" + id;
+        document.getElementById("ContenteModal").innerHTML = "Voulez vous vraiment suprimez le personnage de " + joueur + " " + nom + " ?";
+    }
+
+    function launchModalInfo(info, perso) {
+        document.getElementById("exampleModalLabel").innerHTML = "Information sur " + perso;
+        document.getElementById("DeleteButton").action = "";
+        document.getElementById("ContenteModal").innerHTML = info;
     }
 
     $('#myModal').on('shown.bs.modal', function () {
@@ -36,7 +44,7 @@
                 Nom
             </th>
             <th>
-                Pernoms
+                Prenoms
             </th>
             <th>
                 Age
@@ -114,7 +122,7 @@
                     @Html.DisplayFor(modelItem => item.Vie)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Note)
+                    <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" onclick='launchModalInfo("@item.Note","@item.Pernoms" )'>Info</button>
                 </td>
                 <td>
                     @using (Html.BeginForm("Details", "Personnage", new { ReturnID = item.ID }, FormMethod.Post))
@@ -123,10 +131,7 @@
                     }
                 </td>
                 <td>
-                    <!--using (Html.BeginForm("Delete", "Personnage", new { ReturnID = item.ID }, FormMethod.Post))
-                    {-->
-                        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" onclick='launchModal(@item.ID,"@item.Joueur", "@item.Nom" )'>Delete</button>
-                    
+                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" onclick='launchModal(@item.ID,"@item.Joueur", "@item.Nom" )'><i class="fas fa-trash-alt"></i></button>
                 </td>
             </tr>
         }
@@ -140,12 +145,13 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    Voulez vous vraiment suprimez le personnage de se joueur ?
+                <div class="modal-body" id="ContenteModal">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Supprimer</button>
+                    <form action="" method="post" id="DeleteButton">
+                        <button type="submit" class="btn btn-primary">Supprimer</button>
+                    </form>
                 </div>
             </div>
         </div>

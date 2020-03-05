@@ -217,3 +217,4 @@ C:\Users\adesmarais\source\repos\ProjetSiteJDR\ProjetPerso\bin\Debug\netcoreapp3
 C:\Users\adesmarais\source\repos\ProjetSiteJDR\ProjetPerso\obj\Debug\netcoreapp3.1\ProjetPerso.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\adesmarais\source\repos\ProjetSiteJDR\ProjetPerso\obj\Debug\netcoreapp3.1\Razor\Views\Personnage\Index.cshtml.g.cs
 C:\Users\adesmarais\source\repos\ProjetSiteJDR\ProjetPerso\obj\Debug\netcoreapp3.1\Razor\Views\Personnage\CreateEditePersonnage.cshtml.g.cs
+C:\Users\adesmarais\source\repos\ProjetSiteJDR\ProjetPerso\bin\Debug\netcoreapp3.1\libman.json
