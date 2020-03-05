@@ -6,10 +6,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<script>
+    function launchModal(id, joueur, nom) {
+        var h5 = document.getElementById("exampleModalLabel").innerHTML = joueur + " " + nom;
+    }
+
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+
+</script>
+
+<h1>Liste des Personnage</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a href="Personnage/Create"><button class="btn btn-secondary"> Ajouter un Personnage</button></a>
 </p>
 <table class="table">
     <thead>
@@ -62,60 +74,82 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Personnages) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Joueur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pernoms)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dexteriter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Charisme)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Perseption)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Constitution)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Force)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Agiliter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Vie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                @using (Html.BeginForm("Details", "Personnage", new { ReturnID = item.ID }, FormMethod.Post))
-                {
-                    <button type="submit" class = "btn btn-primary">Edit</button>
-                }
-            </td>
-            <td>
-                @using (Html.BeginForm("Delete", "Personnage",new { ReturnID = item.ID }, FormMethod.Post))
-                {
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                }
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Personnages)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Joueur)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pernoms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dexteriter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Charisme)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Perseption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Constitution)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Force)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agiliter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note)
+                </td>
+                <td>
+                    @using (Html.BeginForm("Details", "Personnage", new { ReturnID = item.ID }, FormMethod.Post))
+                    {
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    }
+                </td>
+                <td>
+                    <!--using (Html.BeginForm("Delete", "Personnage", new { ReturnID = item.ID }, FormMethod.Post))
+                    {-->
+                        <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" onclick='launchModal(@item.ID,"@item.Joueur", "@item.Nom" )'>Delete</button>
+                    
+                </td>
+            </tr>
+        }
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Voulez vous vraiment suprimez le personnage de se joueur ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </tbody>
 </table>

@@ -13,63 +13,113 @@
     <div class="col-md-4">
         @using (Html.BeginForm("CreatePerso", "Personnage", FormMethod.Post))
         {
+        <table>
             @Html.HiddenFor(m => m.Nouveau)
             @Html.HiddenFor(m => m.Personnages.ID)
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Joueur)
-                @Html.TextBoxFor(m => m.Personnages.Joueur)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Nom)
-                @Html.TextBoxFor(m => m.Personnages.Nom)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Pernoms)
-                @Html.TextBoxFor(m => m.Personnages.Pernoms)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Age)
-                @Html.TextBoxFor(m => m.Personnages.Age)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Dexteriter)
-                @Html.TextBoxFor(m => m.Personnages.Dexteriter)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Charisme)
-                @Html.TextBoxFor(m => m.Personnages.Charisme)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Perseption)
-                @Html.TextBoxFor(m => m.Personnages.Perseption)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Constitution)
-                @Html.TextBoxFor(m => m.Personnages.Constitution)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Force)
-                @Html.TextBoxFor(m => m.Personnages.Force)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Agiliter)
-                @Html.TextBoxFor(m => m.Personnages.Agiliter)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Vie)
-                @Html.TextBoxFor(m => m.Personnages.Vie)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Personnages.Note)
-                @Html.TextBoxFor(m => m.Personnages.Note)
-            </div>
-            <div class="form-group">
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Joueur)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Joueur)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Nom)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Nom)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Pernoms)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Pernoms)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Age)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Age)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Dexteriter)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Dexteriter)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Charisme)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Charisme)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Perseption)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Perseption)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Constitution)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Constitution)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Force)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Force)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Agiliter)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Agiliter)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Vie)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Vie)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Personnages.Note)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Personnages.Note)
+                </td>
+            </tr>
+            <tr>
                 <input type="submit" value="@ViewBag.action" class="btn btn-primary" />
-            </div>
+            </tr>
+            </table>
         }
-    </div>
-</div>
+        </div>
+        </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+        <div>
+            <a asp-action="Index"><button class="btn btn-secondary"> Retour</button></a>
+        </div>
