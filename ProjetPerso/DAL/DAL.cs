@@ -27,6 +27,12 @@ namespace ProjetPerso.DAL
             return (client.Personnages.Where(b => b.ID.Equals(id)).First());
         }
 
+        public void UpdatePersonnage(Personnage Perso)
+        {
+            client.Update(Perso);
+            client.SaveChanges();
+        }
+
         public void DeletePersonnage(int id)
         {
             Personnage perso = client.Personnages.Where(b => b.ID.Equals(id)).First();

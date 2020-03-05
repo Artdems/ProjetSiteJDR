@@ -10,6 +10,8 @@ namespace ProjetPerso.Models.Personnages
     {
         public Personnage Personnages { get; set; }
 
+        public bool Nouveau { get; set; }
+
         public CreateEditePersonnageViewModel(Personnage _perso = null)
         {
             if(_perso != null)
